@@ -35,7 +35,7 @@ def get_price(message: telebot.types.Message):
     except Exception as e:
         bot.reply_to(message, f'Не удалось обработать команду.\n{e}')
     else:
-        text = f'Цена {amount} {quote} в {base} - {total_value}'
+        text = f'Цена {amount} {base} в {quote} - {total_value}'
         bot.send_message(message.chat.id, text)
 
 
