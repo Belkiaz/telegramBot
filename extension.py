@@ -32,6 +32,6 @@ class CryptoConverter:
         r = requests.get(f'https://api.apilayer.com/exchangerates_data/latest?symbols={quote_ticker}&base={base_ticker}', headers=headers)
 
         r_json = json.loads(r.content)
-        r_total = r_json['rates'][base_ticker] * float(amount)
+        r_total = r_json['rates'][quote_ticker] * float(amount)
 
         return r_total
